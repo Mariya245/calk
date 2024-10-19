@@ -12,32 +12,38 @@ namespace WinFormsApp1
             label1.Text = "";
             textBox1.Text = "";
         }
-        int symbol = -1;
         int memory = 0;
-        int n1;
-        int n2;
         private void Number(int n)//16 
         {
-            if (textBox1.Text.Length < 16)
+            if (textBox1.Text.Length < 16 && textBox1.Text.IndexOf("%") == -1)
                 textBox1.Text += n.ToString();
         }
         private void Symbol(string s)
         {
             if (textBox1.Text != "")
-                if ((s == "," || s == "%"))
+            {
+                if (s == "%" || s == ",")
                 {
-                    if (textBox1.Text.Length < 16)
+                    if (textBox1.Text.IndexOf("%") == -1)
                     {
-                        if (textBox1.Text.IndexOf(s) == -1)
-                            textBox1.Text += s;
+                        if (s == "%" && label1.Text != "")
+                        {
+                            if (textBox1.Text.IndexOf(s) == -1)
+                                textBox1.Text += s;
+                        }
+                        else if (s == ",")
+                        {
+                            if (textBox1.Text.IndexOf(s) == -1)
+                                textBox1.Text += s;
+                        }
                     }
                 }
                 else
                 {
-                    label1.Text = textBox1.Text +s;
-                    n1 = Int32.Parse(textBox1.Text);
+                    label1.Text = textBox1.Text + s;
                     textBox1.Text = "";
                 }
+            }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
