@@ -1,4 +1,6 @@
+
 using System.Text;
+using System;
 
 namespace WinFormsApp1
 {
@@ -46,7 +48,6 @@ namespace WinFormsApp1
         {
 
         }
-
         private void button12_Click(object sender, EventArgs e)
         {
             Number(7);
@@ -142,5 +143,24 @@ namespace WinFormsApp1
             Symbol("/");
         }
 
+        private void button8_Click(object sender, EventArgs e)//mc
+        {
+            memory = 0;
+        }
+
+        private void button7_Click(object sender, EventArgs e)//mr
+        {
+            textBox1.Text = memory.ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)//m+
+        {
+            memory += Int32.Parse(textBox1.Text);
+        }
+
+        private void button5_Click(object sender, EventArgs e)//m-
+        {
+            memory -= Int32.Parse(textBox1.Text);
+        }
     }
 }
