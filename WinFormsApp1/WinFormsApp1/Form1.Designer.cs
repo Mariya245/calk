@@ -69,6 +69,7 @@
             textBox1.TabIndex = 0;
             textBox1.TextAlign = HorizontalAlignment.Right;
             textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // button1
             // 
@@ -96,6 +97,7 @@
             button2.TabIndex = 2;
             button2.Text = "CE";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -109,6 +111,7 @@
             button3.TabIndex = 3;
             button3.Text = "C";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -283,6 +286,7 @@
             button17.TabIndex = 20;
             button17.Text = "+";
             button17.UseVisualStyleBackColor = false;
+            button17.Click += button17_Click;
             // 
             // button18
             // 
@@ -334,6 +338,7 @@
             button21.TabIndex = 24;
             button21.Text = "=";
             button21.UseVisualStyleBackColor = false;
+            button21.Click += button21_Click;
             // 
             // button22
             // 
