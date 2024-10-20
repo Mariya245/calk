@@ -69,6 +69,7 @@
             textBox1.TabIndex = 0;
             textBox1.TextAlign = HorizontalAlignment.Right;
             textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // button1
             // 
@@ -83,6 +84,7 @@
             button1.TabIndex = 1;
             button1.Text = "%";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -181,6 +183,7 @@
             button9.TabIndex = 12;
             button9.Text = "x";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
             // 
             // button10
             // 
@@ -232,6 +235,7 @@
             button13.TabIndex = 16;
             button13.Text = "-";
             button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
             // 
             // button14
             // 
@@ -283,6 +287,7 @@
             button17.TabIndex = 20;
             button17.Text = "+";
             button17.UseVisualStyleBackColor = false;
+            button17.Click += button17_Click;
             // 
             // button18
             // 
@@ -334,6 +339,7 @@
             button21.TabIndex = 24;
             button21.Text = "=";
             button21.UseVisualStyleBackColor = false;
+            button21.Click += button21_Click;
             // 
             // button22
             // 
@@ -433,6 +439,7 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
