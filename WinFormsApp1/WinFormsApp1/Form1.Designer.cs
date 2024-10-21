@@ -119,7 +119,7 @@
             button4.Name = "button4";
             button4.Size = new Size(70, 53);
             button4.TabIndex = 4;
-            button4.Text = "Del";
+            button4.Text = "/";
             button4.UseVisualStyleBackColor = false;
             // 
             // button5
@@ -392,11 +392,12 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(243, 61);
+            label1.Location = new Point(10, 61);
             label1.Name = "label1";
             label1.Size = new Size(65, 28);
             label1.TabIndex = 27;
             label1.Text = "label1";
+            label1.TextAlign = ContentAlignment.TopRight;
             label1.Click += label1_Click;
             // 
             // Form1

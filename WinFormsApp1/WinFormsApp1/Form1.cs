@@ -1,3 +1,7 @@
+
+using System.Text;
+using System;
+
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
@@ -6,7 +10,6 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -16,5 +19,6 @@ namespace WinFormsApp1
         {
 
         }
+        
     }
 }
