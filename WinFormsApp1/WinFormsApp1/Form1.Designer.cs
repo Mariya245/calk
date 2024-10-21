@@ -133,6 +133,7 @@
             button5.TabIndex = 8;
             button5.Text = "M-";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -145,6 +146,7 @@
             button6.TabIndex = 7;
             button6.Text = "M+";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
@@ -157,6 +159,7 @@
             button7.TabIndex = 6;
             button7.Text = "MR";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button8
             // 
@@ -169,6 +172,7 @@
             button8.TabIndex = 5;
             button8.Text = "MC";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
