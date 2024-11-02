@@ -7,6 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
+
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
@@ -19,19 +20,27 @@ namespace WinFormsApp1
 
             label1.Location = new Point(10, 61);
         }
-        private void Number(object sender, EventArgs e)
+
+        public void Number(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             if (textBox1.Text.Length < 16)
+            {
                 textBox1.Text += b.Text;
+                operatorEntered = false;
+            }
 
         }
         private void Operation(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            label1.Text = textBox1.Text +" "+ b.Text;
-            textBox1.Text = "";
-
+            if (!operatorEntered)
+            {
+                label1.Text = textBox1.Text + " " + b.Text;
+                textBox1.Text = "";
+                isResultDisplayed = false;
+                operatorEntered = true; // Устанавливаем флажок operatorEntered в true
+            }
 
         }
         memory m = new memory();
@@ -54,7 +63,8 @@ namespace WinFormsApp1
         {
             this.Close();
         }
-        private void comma() {
+        private void comma()
+        {
             if (textBox1.Text.IndexOf(",") == -1)
                 textBox1.Text += ",";
 
@@ -70,7 +80,7 @@ namespace WinFormsApp1
 
         private void button7_Click(object sender, EventArgs e)//mr
         {
-           textBox1.Text= m.MR().ToString();
+            textBox1.Text = m.MR().ToString();
         }
 
         private void button6_Click(object sender, EventArgs e)//m+
@@ -138,13 +148,14 @@ namespace WinFormsApp1
         private void button9_Click(object sender, EventArgs e)
         {
             isResultDisplayed = false;
+            Operation(this.button9, e);
         }
 
 
         bool operatorEntered = false;
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        public void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == ',')
             {
                 operatorEntered = false;
             }
@@ -156,11 +167,11 @@ namespace WinFormsApp1
                     operatorEntered = false;
                 }
             }
-            if (e.KeyChar == '*' || e.KeyChar == (char)Keys.X)
+            if (e.KeyChar == '*' || e.KeyChar == 'X')
             {
                 if (!operatorEntered)
                 {
-                    button9_Click(sender, e);
+                    Operation(this.button9, e);
                     operatorEntered = true;
                 }
             }
@@ -168,7 +179,7 @@ namespace WinFormsApp1
             {
                 if (!operatorEntered)
                 {
-                    button1_Click(sender, e);
+                    Operation(this.button4, e);
                     operatorEntered = true;
                 }
             }
@@ -176,7 +187,7 @@ namespace WinFormsApp1
             {
                 if (!operatorEntered)
                 {
-                    button17_Click(sender, e);
+                    Operation(this.button17, e);
                     operatorEntered = true;
                 }
             }
@@ -184,7 +195,7 @@ namespace WinFormsApp1
             {
                 if (!operatorEntered)
                 {
-                    button13_Click(sender, e);
+                    Operation(this.button13, e);
                     operatorEntered = true;
                 }
             }
@@ -202,7 +213,13 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            isResultDisplayed = false;
+            int lenght = textBox1.Text.Length - 1;
+            string text = textBox1.Text;
+            textBox1.Clear();
+            for (int i = 0; i < lenght; i++)
+            {
+                textBox1.Text = textBox1.Text + text[i];
+            }
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -218,11 +235,13 @@ namespace WinFormsApp1
         private void button17_Click(object sender, EventArgs e)
         {
             isResultDisplayed = false;
+            Operation(this.button17, e);
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             isResultDisplayed = false;
+            Operation(this.button13, e);
 
         }
         //private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -231,8 +250,14 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text="0";
+            textBox1.Text = "0";
             textBox1.Focus();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            isResultDisplayed = false;
+            Operation(this.button4, e);
         }
     }
 }

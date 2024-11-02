@@ -82,9 +82,8 @@
             button1.RightToLeft = RightToLeft.No;
             button1.Size = new Size(70, 53);
             button1.TabIndex = 1;
-            button1.Text = "/";
+            button1.Text = "Del";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += Operation;
             button1.Click += button1_Click;
             // 
             // button2
@@ -126,6 +125,7 @@
             button4.TabIndex = 4;
             button4.Text = "/";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -188,9 +188,8 @@
             button9.Name = "button9";
             button9.Size = new Size(70, 53);
             button9.TabIndex = 12;
-            button9.Text = "x";
+            button9.Text = "X";
             button9.UseVisualStyleBackColor = false;
-            button9.Click += Operation;
             button9.Click += button9_Click;
             // 
             // button10
@@ -246,7 +245,6 @@
             button13.TabIndex = 16;
             button13.Text = "-";
             button13.UseVisualStyleBackColor = false;
-            button13.Click += Operation;
             button13.Click += button13_Click;
             // 
             // button14
@@ -302,7 +300,6 @@
             button17.TabIndex = 20;
             button17.Text = "+";
             button17.UseVisualStyleBackColor = false;
-            button17.Click += Operation;
             button17.Click += button17_Click;
             // 
             // button18
@@ -471,8 +468,6 @@
         }
 
         #endregion
-
-        private TextBox textBox1;
         private Button button1;
         private Button button2;
         private Button button3;
@@ -499,5 +494,6 @@
         private Button button25;
         private Button button26;
         private Label label1;
+        public TextBox textBox1;
     }
 }
