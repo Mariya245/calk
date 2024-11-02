@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1
 {
-    internal class memory
+    public class memory
     {
         int mem = 0;
         public void MC() { mem = 0; }
